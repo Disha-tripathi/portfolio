@@ -1,0 +1,552 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text typing effect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+   <style>
+          * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+.content {
+  margin: auto;
+}
+p {
+  font-size: 25px;
+  overflow: hidden;
+  position: relative;
+  color: white;
+}
+p::after {
+  content: "developer";
+  display: inline-block;
+  animation: animation 6.5s steps(9) infinite;
+  width: 0ch;
+  color: lightseagreen;
+}
+p::before {
+  display: inline-block;
+  content: "";
+  width: 2px;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  animation: blinking .4s linear alternate infinite;
+}
+@keyframes animation {
+  25% {
+    content: "developer";
+    width: 8.5ch;
+  }
+  40% {
+    width: 0ch;
+  }
+  75% {
+    content: "designer";
+    width: 7.5ch;
+  }
+  90% {
+    width: 0ch;
+  }
+}
+@keyframes blinking {
+  100%{
+   opacity: 0;
+  }
+}                                             
+   </style>-->
+  <!--</head>
+  <body>
+    <div class="content">
+     <p>I'm a web </p>
+    </div>
+
+  </body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure CSS Responsive Navbar</title>
+    <!--<link rel="stylesheet" href="style.css">-->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,213,255,1);
+    font-family: 'poppins';
+    position: relative;
+}
+.container{
+    width: 80%;
+    height: 400px;
+}
+.nav {
+    height: 50px;
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4d4d4d;
+    position: relative;
+    border: none;
+    border-radius: 10px 10px 0 0;
+}
+  
+.nav  .nav-header {
+    width: 50%;
+    display: inline;
+}
+  
+.nav  .nav-header  .nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px;
+}
+  
+.nav  .nav-btn {
+    display: none;
+}
+  
+.nav  .nav-links {
+    width: 50%;
+    display: inline-flex;
+    justify-content: flex-end;
+    column-gap: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 0 0 10px 10px;
+}
+  
+.nav  .nav-links  a {
+    display: inline-block;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: #efefef;
+}
+  
+.nav  .nav-links  a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+  
+.nav  #nav-check {
+    display: none;
+}
+  
+@media (max-width:600px) {
+    .nav  .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .nav  .nav-btn  label {
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+      width: 50px;
+      height: 50px;
+      padding: 15px;
+      border: none;
+      border-top-right-radius: 10px;
+    }
+    .nav  .nav-btn  label:hover,.nav  #nav-check:checked ~ .nav-btn  label {
+      background-color: rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+    .nav  .nav-btn  label  span {
+      display: block;
+      width: 25px;
+      height: 5px;
+      background-color: #eee;
+      border-radius: 5px;
+    }
+    .nav  .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #333;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+    }
+    .nav  .nav-links  a {
+      display: block;
+      width: 100%;
+      padding-left: 20px;
+    }
+    .nav  #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+    .nav  #nav-check:checked ~ .nav-links {
+      height: 250px;
+      overflow-y: hidden;
+    }
+}
+
+.attribute{
+    position: absolute;
+    bottom: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+              <div class="nav-title">
+                Sona Code
+              </div>
+            </div>
+            <div class="nav-btn">
+              <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+              </label>
+            </div>
+            <div class="nav-links">
+                <a href="https://www.instagram.com/sona_code/" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/@sonacode" target="_blank">Youtube</a>
+                <a href="https://github.com/Dinil-Thilakarathne/" target="_blank">Github</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="attribute">
+        Create by 
+        <a href="https://linktr.ee/sona_code">
+            Dinil Thilakarathne
+        </a >
+    </div>
+    
+</body>
+</html>
+<!--<section class="projects"> <h1 class="h1" >These are some of my projects</h1><br/>
+  <div class="contaainer">
+    <img src="shiksha.png" alt="Avatar" class="image">
+    
+    <div class="oveerlay">
+      <div class="teext">Hello World</div>
+    </div>
+  </div>
+  <div class="contaainer">
+    <img src="login form.png" alt="Avatar" class="image">
+
+    <div class="oveerlay">
+      <div class="teext">Hello World</div>
+    </div>
+  </div>
+  <div class="contaainer">
+    <img src="camper cafe.png" alt="Avatar" class="image">
+    <div class="oveerlay">
+      <div class="teext">Hello World</div>
+    </div>
+  </div>
+  <div class="polaroid">
+    <img src="shiksha1.png" alt="5 Terre" style="width:50%">
+    <div class="contaainer">
+  
+    </div>
+  </div>
+  
+  <span class="polaroid">
+    <img src="flexbox.png" alt="5 Terre" style="width:50%">
+    <div class="contaainer">
+   
+    </div>
+  </span>
+  <span class="polaroid">
+    <img src="cursor.png" alt="5 Terre" style="width:50%">
+    <div class="contaainer">
+    
+    </div>
+  </span>
+  
+  <span class="polaroid">
+    <img src="login form.png" alt="5 Terre" style="width:50%">
+    <div class="contaainer">
+    
+    </div>
+  </span>
+  
+  <div class="polaroid">
+    <img src="pepsi.png" alt="5 Terre" style="width:50%">
+    <div class="contaainer">
+    
+    </div>
+  </div>
+  
+  <div class="polaroid">
+    <img src="camper cafe.png" alt="5 Terre" style="width:50%">
+    <div class="contaainer">
+    
+    </div>
+  </div>
+  
+  <<div class="slideshow middle">
+  <div class="pro">
+    <div class="heading">
+   
+    /div>
+      <div class="slides s1">
+        <input type="radio" name="r" id="r1" checked>
+        <input type="radio" name="r" id="r2">
+        <input type="radio" name="r" id="r3">
+        <input type="radio" name="r" id="r4">
+        <input type="radio" name="r" id="r5">
+        <input type="radio" name="r" id="r6">
+    <div class="pics s1 "><img src="shiksha1.png" alt="" id="ias"></div>
+    <div class="pics"><img src="flexbox.png" alt=""      id="ibs"></div>
+    <div class="pics"><img src="login form.png" alt=""   id="ics"></div>
+    <div class="pics"><img src="cursor.png" alt=""       id="ids"></div>
+    <div class="pics"><img src="pepsi.png" alt=""        id="ies"></div>
+    <div class="pics"><img src="camper cafe.png" alt=""  id="ifs"></div>
+    </div>
+</div>
+<div class="navigation">
+  <label for="r1" class="bar"></label>
+  <label for="r2" class="bar"></label>
+  <label for="r3" class="bar"></label>
+  <label for="r4" class="bar"></label>
+  <label for="r5" class="bar"></label>
+  <label for="r6" class="bar"></label>
+</div>
+</div>
+</section>
+
+<section>
+  <section class="projects">
+    <div class="contasainer">
+        <div class="carousel">
+            <input type="radio" name="slides" checked="checked" id="slide-1">
+            <input type="radio" name="slides" id="slide-2">
+            <input type="radio" name="slides" id="slide-3">
+            <input type="radio" name="slides" id="slide-4">
+            <input type="radio" name="slides" id="slide-5">
+            <input type="radio" name="slides" id="slide-6">
+            <ul class="carousel__slides">
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="shiksha1.png" alt="" id="ias">
+                        </div>
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <span class="credit">Photo: Tim Marshall</span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="login form.png" alt="" id="ibs">
+                        </div>
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <span class="credit">Photo: Christian Joudrey</span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="camper cafe.png" alt="" id="ics">
+                        </div>
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <span class="credit">Photo: Steve Carter</span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="pepsi.png" alt="" id="ids">
+                        </div>
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <span class="credit">Photo: Aleksandra Boguslawska</span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="flexbox.png" alt="" id="ies">
+                        </div>
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <span class="credit">Photo: Rosan Harmens</span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="cursor.png" alt="", id="ifs">
+                        </div>
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <span class="credit">Photo: Annie Spratt</span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                  <figure>
+                      <div>
+                          <img src="https://picsum.photos/id/1052/800/450" alt="">
+                      </div>
+                      <figcaption>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          <span class="credit">Photo: Annie Spratt</span>                            
+                      </figcaption>
+                  </figure>
+              </li>
+            </ul>    
+            <ul class="carousel__thumbnails">
+                <li>
+                    <label for="slide-1"><img src="shiksha.png" alt="" id="fimg"></label>
+                </li>
+                <li>
+                    <label for="slide-2"><img src="https://picsum.photos/id/1043/150/150" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-3"><img src="https://picsum.photos/id/1044/150/150" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-4" ><img src="https://picsum.photos/id/1045/150/150" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-5"><img src="https://picsum.photos/id/1049/150/150" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-6"><img src="https://picsum.photos/id/1052/150/150" alt=""></label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+</section>-->
+<!--<h3 id="heading1">Skills</h3>
+  <p>The more that you read, the more things you will know. The more that you learn, the more places you'll go.</p>
+  <div class="serve">
+    <div class="servg svg1" >
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. <path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+    </div>
+  </div>
+  <div class="serve">
+    <div class="servg svg2">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em"  viewBox="0 0 512 512">! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. <path d="M256 0c53 0 96 43 96 96v3.6c0 15.7-12.7 28.4-28.4 28.4H188.4c-15.7 0-28.4-12.7-28.4-28.4V96c0-53 43-96 96-96zM41.4 105.4c12.5-12.5 32.8-12.5 45.3 0l64 64c.7 .7 1.3 1.4 1.9 2.1c14.2-7.3 30.4-11.4 47.5-11.4H312c17.1 0 33.2 4.1 47.5 11.4c.6-.7 1.2-1.4 1.9-2.1l64-64c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-64 64c-.7 .7-1.4 1.3-2.1 1.9c6.2 12 10.1 25.3 11.1 39.5H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H416c0 24.6-5.5 47.8-15.4 68.6c2.2 1.3 4.2 2.9 6 4.8l64 64c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-63.1-63.1c-24.5 21.8-55.8 36.2-90.3 39.6V240c0-8.8-7.2-16-16-16s-16 7.2-16 16V479.2c-34.5-3.4-65.8-17.8-90.3-39.6L86.6 502.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l64-64c1.9-1.9 3.9-3.4 6-4.8C101.5 367.8 96 344.6 96 320H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H96.3c1.1-14.1 5-27.5 11.1-39.5c-.7-.6-1.4-1.2-2.1-1.9l-64-64c-12.5-12.5-12.5-32.8 0-45.3z"/></svg>
+  </div>
+</div>
+  <div class="serve">
+    <div class="servg svg3" >
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc.<path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM199.4 312.6c31.2 31.2 81.9 31.2 113.1 0c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9c-50 50-131 50-181 0s-50-131 0-181s131-50 181 0c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0c-31.2-31.2-81.9-31.2-113.1 0s-31.2 81.9 0 113.1z"/></svg>
+    <div class="servg">
+  </div>
+  </div>-->
+  <!--
+   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#A458EA" fill-opacity="1" d="M0,192L34.3,208C68.6,224,137,256,206,224C274.3,192,343,96,411,96C480,96,549,192,617,224C685.7,256,754,224,823,202.7C891.4,181,960,171,1029,181.3C1097.1,192,1166,224,1234,208C1302.9,192,1371,128,1406,96L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+   -->
+   <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#A458EA" fill-opacity="1" d="M0,160L40,154.7C80,149,160,139,240,144C320,149,400,171,480,192C560,213,640,235,720,224C800,213,880,171,960,160C1040,149,1120,171,1200,170.7C1280,171,1360,149,1400,138.7L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>-->
+   <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,160L40,154.7C80,149,160,139,240,144C320,149,400,171,480,192C560,213,640,235,720,224C800,213,880,171,960,160C1040,149,1120,171,1200,170.7C1280,171,1360,149,1400,138.7L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+   -->
+
+
+<!--- ----for upper side----
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#A458EA" fill-opacity="1" d="M0,160L40,154.7C80,149,160,139,240,144C320,149,400,171,480,192C560,213,640,235,720,224C800,213,880,171,960,160C1040,149,1120,171,1200,170.7C1280,171,1360,149,1400,138.7L1440,128L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+   -------for lower side-----
+   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#A458EA" fill-opacity="1" d="M0,160L40,154.7C80,149,160,139,240,144C320,149,400,171,480,192C560,213,640,235,720,224C800,213,880,171,960,160C1040,149,1120,171,1200,170.7C1280,171,1360,149,1400,138.7L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+  <section class="about_me">
+  <div class="me">
+    <p><b>About Me:</b>
+      My name is disha, i was born in India and moved to 
+      Australia when i was young with my family.</br>
+      After completing high school at the age of sixteen years old,</br>
+      I decided that it's time for me to start working on something new!</br>
+      So here we are today where you can find out more about who iam!
+    </br>
+      </p>
+      
+  </div>
+</section>-->
+ <!--<div class="container">
+        <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+              <div class="nav-title">
+                Sona Code
+              </div>
+            </div>
+            <div class="nav-btn">
+              <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+              </label>
+            </div>
+            <div class="nav-links">
+                <a href="https://www.instagram.com/sona_code/" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/@sonacode" target="_blank">Youtube</a>
+                <a href="https://github.com/Dinil-Thilakarathne/" target="_blank">Github</a>
+            </div>
+        </div>-->
+
+
+        <!--<section class="bg">
+  <section class="projectes"> 
+    <div class="conttainer">
+    <div class="caroousel">
+      <div class="caroousel__faace"><span></span></div>
+      <div class="caroousel__faace"><span></span></div>
+      <div class="caroousel__faace"><span></span></div>
+      <div class="caroousel__faace"><span></span></div>
+      <div class="caroousel__faace"><span></span></div>
+      <div class="caroousel__faace"><span></span></div>
+      <div class="caroousel__faace"><span></span></div>
+      <div class="caroousel__faace"><span></span></div>
+      <div class="caroousel__faace"><span></span></div>
+    </div>
+  </div>
+  </section>
+ </section>-->
